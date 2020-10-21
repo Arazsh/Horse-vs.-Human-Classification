@@ -1,6 +1,6 @@
-# Horse-vs.-Human-Classification
+# Horse-vs.-Human-Classification using VGG19 
 
-In this code, a model is developed to classify images into two classes of horse and human. This model benefits from the convolutional layesrs of VGG19 neural netwok, which is trained by over one million images of ImageNet dataset for 1000 classes. The dataset used in this code consists of 1283 horse and human artificial images of 300×300 pixels. The dataset is constructed by Laurence Moroney and is available at Kaggle. As the dataset is relatively small, it is less likely to be able to well train the convolutional layers of a CNN using this dataset. Therefore, to enhance the acuracy of the model in this code, the convolution block of VGG19, which is well trained by ImageNet dataset, is extracted and installed in our model. The convolutional layers are freezed and only the deep layers of the model are trained by the horse and human images. The model shows the accuracy of over 95% for validation data of the same dataset, which are artificial images. Also, the model was tested for 30 natural random images of horses and humans with various sizes, and the acuracy of around 80% was observed.
+In this code, a model is developed to classify images into two classes of horse and human. This model benefits from the convolutional layesrs of VGG19 neural netwok, which is trained by over one million images of ImageNet dataset for 1000 classes. The dataset used in this code consists of 1283 horse and human artificial images of 300×300 pixels. The dataset is constructed by Laurence Moroney and is available at Kaggle. As the dataset is relatively small, it is less likely to be able to well train the convolutional layers of a CNN using this dataset. Therefore, to enhance the acuracy of the model in this code, the convolution block of VGG19, which is well trained by ImageNet dataset, is extracted and installed in our model. The convolutional layers are freezed and only the dense layers of the model are trained by the horse and human images. The model shows the accuracy of over 95% for validation data of the same dataset, which are artificial images. Also, the model shows relatively high accuracy for out of dataset images regarding the limited number of training images and the high similarity between them.
 
 ## Downloading the dataset
 
@@ -26,10 +26,11 @@ For constructing the convolutional layers of the model, I utilized the filter ba
 
 ## Testing the model for images out of dataset
 
-As can be seen in the above figure, the dataset images are computer created. To test the model for images out of the dataset that can include natural images, a section in the notebook is provided to upload images and predict if they belong to horse or human class. I tested the model for random horse and human images with different sizes and various contents like paintings or photo of toys. The model shows acceptable accuracy considering the number of training images and the high similarity between them.
+As can be seen in the above figure, the dataset images are computer created. To test the model for images out of the dataset that can include natural images, a section in the notebook is provided to upload images and predict if they belong to horse or human class. I tested the model for random horse and human images with different sizes and various contents like paintings or photo of toys. The model shows acceptable accuracy considering the number of training images and the high similarity among them.
 
 ## Access to filtered images 
 
-At the end of the notebook, a piece of code is provided to get access to filtered images in the model's filter bank including the convolutional layers. Below, we can see the results for a sample image and the first few layers. Following the code, it is possible to obtain the output of any specific filter in any desired layer. 
+At the end of the notebook, a piece of code is provided to get access to filtered images in the model's filter bank including the convolutional layers. Below, we can see the results for a random image and the first few layers. Following the code, it is possible to obtain the output of any specific filter in any desired layer. 
 
+![alt text](https://github.com/Arazsh/Horse-vs.-Human-Classification/blob/media/image2.png?raw=true) 
 
