@@ -22,4 +22,14 @@ Since the number of training images in the dataset is low (1027), it is unlikely
 
 ## Constructing the model
 
-For constructing the model, I utilized the filter bank of VGG19 from the second layer to the fourth convolutional layer of the fifth block 'block5_conv4' (top layer is excluded and substituted with a layer to accommodate 150*150 images). In the following of the filter bank, a fllatening layer in addition to four Dense layers are accumulated. RMSprop and binary_crossentropy are then used for optimizer and loss function. The model is then trained for 30 epochs and the accuracy of 0.9688 is obtained for validation set, that can be seen in the notebook. Furthermore, the 
+For constructing the convolutional layers of the model, I utilized the filter bank of VGG19 from the second layer to the fourth convolutional layer of the fifth block 'block5_conv4' (top layer is excluded and substituted with a layer to accommodate 150*150 images). In the following of the filter bank, a fllatening layer in addition to four Dense layers are accumulated. RMSprop and binary_crossentropy are then used for optimizer and loss function. The model is then trained for 30 epochs and the accuracy of 0.9688 is obtained for the validation set, that can be seen in the notebook. Furthermore, the myCallback class and callbacks instance object are defined before fitting the model to have control over the number of epochs the fitting runs based on train and validation accuracies.
+
+## Testing the model for images out of dataset
+
+As can be seen in the above figure, the dataset images are computer created. To test the model for images out of the dataset that can include natural images, a section in the notebook is provided to upload images and predict if they belong to horse or human class. I tested the model for random horse and human images with different sizes and various contents like paintings or photo of toys. The model shows acceptable accuracy considering the number of training images and the high similarity between them.
+
+## Access to filtered images 
+
+At the end of the notebook, a piece of code is provided to get access to filtered images in the model's filter bank including the convolutional layers. Below, we can see the results for a sample image and the first few layers. Following the code, it is possible to obtain the output of any specific filter in any desired layer. 
+
+
