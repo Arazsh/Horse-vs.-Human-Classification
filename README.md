@@ -8,4 +8,10 @@ The dataset used in this code is available in Kaggle and is constructed by Laure
 [Train data](https://storage.googleapis.com/laurencemoroney-blog.appspot.com/horse-or-human.zip)  
 [Validation data](https://storage.googleapis.com/laurencemoroney-blog.appspot.com/validation-horse-or-human.zip)  
 
-![alt text](https://github.com/Arazsh/Horse-vs.-Human-Classification/blob/media/image1.png?raw=true)
+![alt text](https://github.com/Arazsh/Horse-vs.-Human-Classification/blob/media/image1.png?raw=true)  
+
+The above figure demonstrates two random horse and human images from the train dataset. Also, the number of train and validation images are provided at the top of the figure.  
+
+## ImageDataGenerator
+
+The next section of the code employs ImageDataGenerator and flow_from_directory to generate the train and test data for the model that is going to be built. To improve the accuracy of the model and to reduce the overfitting issue, image augmentation was tested for training set. However, the model predictions were weaker by using image augmentation and I commented out that part of the code. 
