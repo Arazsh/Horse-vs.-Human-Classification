@@ -15,3 +15,11 @@ The above figure demonstrates two random horse and human images from the train d
 ## ImageDataGenerator
 
 The next section of the code employs ImageDataGenerator and flow_from_directory to generate the train and test data for the model that is going to be built. To improve the accuracy of the model and to reduce the overfitting issue, image augmentation was tested for training set. However, the model predictions were weaker by using image augmentation and I commented out that part of the code. 
+
+## VGG19
+Since the number of training images in the dataset is low (1027), it is unlikely to be able to well train the convolutional layers of a model using this dataset. To tackle this problem, Transfer Learning and VGG19 are used. As can be seen in the code, the VGG19 from Keras applications is called and it is loaded with ImageNet weights. ImageNet contains over one million images in 1000 classes which delivers a well-trained filter bank for the VGG19. I also freezed the VGG19 layers to prevent the convolutional layers from changing while training our model that uses the filter bank of VGG19.  
+
+
+## Constructing the model
+
+For constructing the model, I utilized the filter bank of VGG19 from the second layer to the fourth convolutional layer of the fifth block 'block5_conv4' (top layer is excluded and substituted with a layer to accommodate 150*150 images). In the following of the filter bank, a fllatening layer in addition to four Dense layers are accumulated. RMSprop and binary_crossentropy are then used for optimizer and loss function. The model is then trained for 30 epochs and the accuracy of 0.9688 is obtained for validation set, that can be seen in the notebook. Furthermore, the 
