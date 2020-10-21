@@ -6,4 +6,6 @@ In this code, a model is developed to classify images into two classes of horse 
 
 The dataset used in this code is available in Kaggle and is constructed by Laurence Moroney. Here, the two direct links for train and validation data that are provided by Laurence Moroney (lmoroney@gmail.com / laurencemoroney.com) are used to download the images into the notebook.  
 [Train data](https://storage.googleapis.com/laurencemoroney-blog.appspot.com/horse-or-human.zip)  
-[Validation data](https://storage.googleapis.com/laurencemoroney-blog.appspot.com/validation-horse-or-human.zip)
+[Validation data](https://storage.googleapis.com/laurencemoroney-blog.appspot.com/validation-horse-or-human.zip)  
+
+![alt text](https://github.com/Arazsh/Horse-vs.-Human-Classification/blob/media/image1.png?raw=true)
